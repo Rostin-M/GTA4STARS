@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA4STARS - Venta de Autos</title>
+
+    <!-- importar archivo CSS personalizado -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- sección de encabezado comienza -->
+     
+    <header class="header">
+
+        <div id="menu-btn" class="fa-solid fa-bars"></div>
+
+        <a href="#" class="logo">GTA4<span>STARS</span></a>
+
+        <!-- sección de navegación -->
+        <nav class="navbar">
+            <a href="#home">Inicio</a>
+            <a href="#vehicles">Vehículos</a>
+            <a href="#services">Servicios</a>
+            <a href="#featured">Destacados</a>
+            <a href="#reviews">Reseñas</a>
+            <a href="#contact">Contacto</a>
+            
+        </nav>
+
+        <!-- botón de inicio de sesión y registro -->
+        <div id="auth-btns">
+            <button type="button" class="btn" id="login-btn">Iniciar Sesión</button>
+            <!-- <button type="button" class="btn" id="register-btn">Registrarse</button> -->
+           
+        </div>
+
+        </header>
+        <!-- sección de encabezado termina -->
+
+        <!-- formulario de inicio de sesión -->
+        <div class="login-form-container">
+
+        <span class="fa-solid fa-xmark" id="close-login-btn"></span>
+
+        <form action="">
+            <h3>Inicio de Sesión</h3>
+            <input type="email" placeholder="Correo Electrónico" class="box">
+            <input type="password" placeholder="Contraseña" class="box">
+            <p>¿Olvidaste tu contraseña? <a href="#">Haz clic aquí</a></p>
+            <input type="submit" value="Iniciar Ahora" class="btn">
+            <p>O inicia sesión con</p>
+            <div class="buttons">
+            <a href="#" class="btn">Google</a>
+            <a href="#" class="btn">Facebook</a>
+            </div>
+            <button type="button" class="btn" id="register-btn">Registrarse</button>
+            
+        </form>
+
+        </div>
+
+        <!-- formulario de registro -->
+        <div class="register-form-container">
+
+        <span class="fa-solid fa-xmark" id="close-register-btn"></span>
+
+        <form action="">
+            <h3>Registro</h3>
+            <input type="text" placeholder="Nombre Completo" class="box">
+            <input type="email" placeholder="Correo Electrónico" class="box">
+            <input type="password" placeholder="Contraseña" class="box">
+            <input type="password" placeholder="Confirmar Contraseña" class="box">
+            <input type="submit" value="Registrarse Ahora" class="btn">
+            <p>¿Ya tienes una cuenta? <a href="#" id="open-login-form">Inicia Sesión</a></p>
+        </form>
+
+        </div>
+
+    <!-- sección de inicio comienza -->
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <div class="text-content">
+                <h1>Los Mejores Autos</h1>
+                <a href="#" class="btn">Explorar</a>
+            </div>
+            <div class="image-container">
+                <img class="home-image" src="./image/home.jpg" alt="Imagen de auto">
+            </div>
+        </div>
+    </section>
+    <!-- sección de inicio termina -->
+
+<!-- sección de íconos comienza -->
+<section class="icons-container">
+
+    <div class="icons">
+        <i class="fa-solid fa-city"></i>
+        <div class="content">
+            <h3>5+</h3>
+            <p>Ciudades Disponibles</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fa-solid fa-car-burst"></i>
+        <div class="content">
+            <h3>10,000+</h3>
+            <p>Autos Vendidos</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fa-solid fa-user-secret"></i>
+        <div class="content">
+            <h3>2000+</h3>
+            <p>Clientes Satisfechos</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fa-solid fa-gun"></i>
+        <div class="content">
+            <h3>99%</h3>
+            <p>Protección Contra la Policía</p>
+        </div>
+    </div>
+
+</section>
+<!-- sección de íconos termina -->
+
+
+    <!-- sección de vehículos comienza -->
+    <section class="vehical" id="vehicles">
+
+        <h1 class="heading">Supercarros <span>GTA V</span></h1>
+
+        <div class="slider">
+
+            <div class="wrapper">
+                <div class="fa-solid fa-angle-left preNext" id="preBtn"></div>
+
+                <div class="wraper-box">
+                    <!-- Turismo R -->
+                    <div class="box active" id="adder-img">
+                        <img src="./image/turismor.png" alt="Turismo R">
+                        <div class="content">
+                            <h3>Turismo R</h3>
+                            <div class="price"><span>Precio: </span>$1,000,000</div>
+                            <p>
+                                <i class="fa-solid fa-car"></i> Supercarro<br>
+                                <i class="fa-solid fa-calendar"></i> 2022<br>
+                                <i class="fa-solid fa-gear"></i> Manual<br>
+                                <i class="fa-solid fa-bolt"></i> Eléctrico<br>
+                                <i class="fa-solid fa-tachometer-alt"></i> 240mph
+                            </p>
+                            <a href="#" class="btn">Ver Más</a>
+                        </div>
+                    </div>
+
+                    <!-- XA21 -->
+                    <div class="box" id="zentorno-img">
+                        <img src="./image/xa21.webp" alt="XA21">
+                        <div class="content">
+                            <h3>XA21</h3>
+                            <div class="price"><span>Precio: </span>$725,000</div>
+                            <p>
+                                <i class="fa-solid fa-car"></i> Supercarro<br>
+                                <i class="fa-solid fa-calendar"></i> 2021<br>
+                                <i class="fa-solid fa-gear"></i> Automático<br>
+                                <i class="fa-solid fa-leaf"></i> Híbrido<br>
+                                <i class="fa-solid fa-tachometer-alt"></i> 220mph
+                            </p>
+                            <a href="#" class="btn">Ver Más</a>
+                        </div>
+                    </div>
+
+                    <!-- Overflod Entity XF -->
+                    <div class="box" id="entityxf-img">
+                        <img src="./image/entityxf.png" alt="Overflod Entity XF">
+                        <div class="content">
+                            <h3>Overflod Entity XF</h3>
+                            <div class="price"><span>Precio: </span>$795,000</div>
+                            <p>
+                                <i class="fa-solid fa-car"></i> Supercarro<br>
+                                <i class="fa-solid fa-calendar"></i> 2023<br>
+                                <i class="fa-solid fa-gear"></i> Manual<br>
+                                <i class="fa-solid fa-gas-pump"></i> Gasolina<br>
+                                <i class="fa-solid fa-tachometer-alt"></i> 230mph
+                            </p>
+                            <a href="#" class="btn">Ver Más</a>
+                        </div>
+                    </div>
+
+                    <!-- Zorrusso -->
+                    <div class="box" id="t20-img">
+                        <img src="./image/Zorrusso.png" alt="Zorrusso">
+                        <div class="content">
+                            <h3>Zorrusso</h3>
+                            <div class="price"><span>Precio: </span>$2,200,000</div>
+                            <p>
+                                <i class="fa-solid fa-car"></i> Supercarro<br>
+                                <i class="fa-solid fa-calendar"></i> 2020<br>
+                                <i class="fa-solid fa-gear"></i> Automático<br>
+                                <i class="fa-solid fa-oil-can"></i> Diésel<br>
+                                <i class="fa-solid fa-tachometer-alt"></i> 250mph
+                            </p>
+                            <a href="#" class="btn">Ver Más</a>
+                        </div>
+                    </div>
+
+                    <!-- Itali GTO -->
+                    <div class="box" id="itali">
+                        <img src="./image/italigto.webp" alt="itali GTO">
+                        <div class="content">
+                            <h3>itali GTO</h3>
+                            <div class="price"><span>Precio: </span>$1,950,000</div>
+                            <p>
+                                <i class="fa-solid fa-car"></i> Supercarro<br>
+                                <i class="fa-solid fa-calendar"></i> 2022<br>
+                                <i class="fa-solid fa-gear"></i> Manual<br>
+                                <i class="fa-solid fa-gas-pump"></i> Gasolina<br>
+                                <i class="fa-solid fa-tachometer-alt"></i> 240mph
+                            </p>
+                            <a href="#" class="btn">Ver Más</a>
+                        </div>
+                    </div>
+
+                    <!-- Pegassi Vacca -->
+                    <div class="box" id="vacca-img">
+                        <img src="./image/vacca.webp" alt="Pegassi Vacca">
+                        <div class="content">
+                            <h3>Pegassi Vacca</h3>
+                            <div class="price"><span>Precio: </span>$240,000</div>
+                            <p>
+                                <i class="fa-solid fa-car"></i> Supercarro<br>
+                                <i class="fa-solid fa-calendar"></i> 2019<br>
+                                <i class="fa-solid fa-gear"></i> Automático<br>
+                                <i class="fa-solid fa-bolt"></i> Eléctrico<br>
+                                <i class="fa-solid fa-tachometer-alt"></i> 210mph
+                            </p>
+                            <a href="#" class="btn">Ver Más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fa-solid fa-angle-right preNext" id="nextBtn"></div>
+            </div>
+
+            <div class="activeCircle">
+                <div class="fa-regular fa-solid fa-circle" id="forAdder-img"></div>
+                <div class="fa-regular fa-circle" id="forZentorno-img"></div>
+                <div class="fa-regular fa-circle" id="forEntityXF-img"></div>
+                <div class="fa-regular fa-circle" id="forT20-img"></div>
+                <div class="fa-regular fa-circle" id="forOsiris-img"></div>
+                <div class="fa-regular fa-circle" id="forVacca-img"></div>
+            </div>
+        </div>
+
+    </section>
+    <!-- sección de vehículos termina -->
+    <section class="services" id="services">
+
+        <h1 class="heading">Nuestros <span>Servicios</span></h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <i class="fa-solid fa-car"></i>
+                <h3>Conocer Modelos</h3>
+                <p>Explora nuestra amplia gama de vehículos y encuentra el modelo perfecto para ti.</p>
+                <a href="#featured" class="btn">Descubre Más</a>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-shopping-cart"></i>
+                <h3>Comprar Vehículos</h3>
+                <p>Adquiere tu próximo coche con facilidad y seguridad en nuestra plataforma.</p>
+                <a href="#contact" class="btn">Compra Ahora</a>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-spray-can"></i>
+                <h3>Personalización y Modificaciones</h3>
+                <p>Transforma tu vehículo con mejoras de rendimiento y estéticas en nuestros talleres especializados.</p>
+                <a href="#contact" class="btn">Personaliza Ahora</a>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-headset"></i>
+                <h3>Asistencia 24/7</h3>
+                <p>Nuestro equipo está disponible en todo momento para apoyarte en tus aventuras urbanas.</p>
+                <a href="#contact" class="btn">Contacta con Nosotros</a>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- sección de servicios termina -->
+
+
+    <!-- sección de destacados comienza -->
+    <section class="featured" id="featured">
+
+        <h1 class="heading"><span>Autos</span> Destacados</h1>
+
+        <div class="featured-slider">
+
+            <div class="featured-wrapper">
+                <div class="fa-solid fa-angle-left preNext" id="fPreBtn"></div>
+
+                <div class="featured-wrapper2">
+                    <div class="featured-wrapper-box">
+
+                        <div class="box active">
+                            <img src="./image/adder.png" alt="Truffade Adder">
+                            <h3>Truffade Adder</h3>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <div class="details">
+                                <p><i class="fa-solid fa-tachometer-alt"></i> Velocidad Máxima: 250 km/h</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> Combustible: Gasolina</p>
+                                <p><i class="fa-solid fa-calendar"></i> Año: 2022</p>
+                            </div>
+                            <div class="price">$1,000,000</div>
+                            <a href="#" class="btn">Ver Más</a>
+                        </div>
+
+                        <div class="box">
+                            <img src="./image/zentorno.webp" alt="Pegassi Zentorno">
+                            <h3>Pegassi Zentorno</h3>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <div class="details">
+                                <p><i class="fa-solid fa-tachometer-alt"></i> Velocidad Máxima: 240 km/h</p>
+                                <p><i class="fa-solid fa-leaf"></i> Combustible: Híbrido</p>
+                                <p><i class="fa-solid fa-calendar"></i> Año: 2021</p>
+                            </div>
+                            <div class="price">$725,000</div>
+                            <a href="#" class="btn">Ver Más</a>
+                        </div>
+
+                        <div class="box">
+                            <img src="./image/t20.webp" alt="Progen T20">
+                            <h3>Progen T20</h3>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <div class="details">
+                                <p><i class="fa-solid fa-tachometer-alt"></i> Velocidad Máxima: 260 km/h</p>
+                                <p><i class="fa-solid fa-bolt"></i> Combustible: Eléctrico</p>
+                                <p><i class="fa-solid fa-calendar"></i> Año: 2020</p>
+                            </div>
+                            <div class="price">$2,200,000</div>
+                            <a href="#" class="btn">Ver Más</a>
+                        </div>
+
+                        <div class="box">
+                            <img src="./image/osiris.webp" alt="Pegassi Osiris">
+                            <h3>Pegassi Osiris</h3>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <div class="details">
+                                <p><i class="fa-solid fa-tachometer-alt"></i> Velocidad Máxima: 245 km/h</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> Combustible: Gasolina</p>
+                                <p><i class="fa-solid fa-calendar"></i> Año: 2022</p>
+                            </div>
+                            <div class="price">$1,950,000</div>
+                            <a href="#" class="btn">Ver Más</a>
+                        </div>
+
+                        <div class="box">
+                            <img src="./image/italigtb.webp" alt="Progen Itali GTB">
+                            <h3>Progen Itali GTB</h3>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <div class="details">
+                                <p><i class="fa-solid fa-tachometer-alt"></i> Velocidad Máxima: 255 km/h</p>
+                                <p><i class="fa-solid fa-oil-can"></i> Combustible: Diésel</p>
+                                <p><i class="fa-solid fa-calendar"></i> Año: 2023</p>
+                            </div>
+                            <div class="price">$1,189,000</div>
+                            <a href="#" class="btn">Ver Más</a>
+                        </div>
+
+                        <div class="box">
+                            <img src="./image/cheetah.webp" alt="Grotti Cheetah">
+                            <h3>Grotti Cheetah</h3>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <div class="details">
+                                <p><i class="fa-solid fa-tachometer-alt"></i> Velocidad Máxima: 240 km/h</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> Combustible: Gasolina</p>
+                                <p><i class="fa-solid fa-calendar"></i> Año: 2021</p>
+                            </div>
+                            <div class="price">$650,000</div>
+                            <a href="#" class="btn">Ver Más</a>
+                        </div>
+
+                        <div class="box">
+                            <img src="./image/banshee.webp" alt="Bravado Banshee 900R">
+                            <h3>Bravado Banshee 900R</h3>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <div class="details">
+                                <p><i class="fa-solid fa-tachometer-alt"></i> Velocidad Máxima: 220 km/h</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> Combustible: Gasolina</p>
+                                <p><i class="fa-solid fa-calendar"></i> Año: 2020</p>
+                            </div>
+                            <div class="price">$565,000</div>
+                            <a href="#" class="btn">Ver Más</a>
+                        </div>
+
+                        <div class="box">
+                            <img src="./image/x80proto.webp" alt="Grotti X80 Proto">
+                            <h3>Grotti X80 Proto</h3>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <div class="details">
+                                <p><i class="fa-solid fa-tachometer-alt"></i> Velocidad Máxima: 270 km/h</p>
+                                <p><i class="fa-solid fa-bolt"></i> Combustible: Eléctrico</p>
+                                <p><i class="fa-solid fa-calendar"></i> Año: 2023</p>
+                            </div>
+                            <div class="price">$2,700,000</div>
+                            <a href="#" class="btn">Ver Más</a>
+                        </div>
+
+                        <div class="box">
+                            <img src="./image/reaper.webp" alt="Pegassi Reaper">
+                            <h3>Pegassi Reaper</h3>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <div class="details">
+                                <p><i class="fa-solid fa-tachometer-alt"></i> Velocidad Máxima: 250 km/h</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> Combustible: Gasolina</p>
+                                <p><i class="fa-solid fa-calendar"></i> Año: 2022</p>
+                            </div>
+                            <div class="price">$1,595,000</div>
+                            <a href="#" class="btn">Ver Más</a>
+                        </div>
+
+                        <div class="box">
+                            <img src="./image/nero.webp" alt="Truffade Nero">
+                            <h3>Truffade Nero</h3>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <div class="details">
+                                <p><i class="fa-solid fa-tachometer-alt"></i> Velocidad Máxima: 260 km/h</p>
+                                <p><i class="fa-solid fa-oil-can"></i> Combustible: Diésel</p>
+                                <p><i class="fa-solid fa-calendar"></i> Año: 2023</p>
+                            </div>
+                            <div class="price">$1,440,000</div>
+                            <a href="#" class="btn">Ver Más</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="fa-solid fa-angle-right preNext" id="fNextBtn"></div>
+            </div>
+
+            <div class="fActCircle">
+                <div class="fa-regular fa-solid fa-circle"></div>
+                <div class="fa-regular fa-circle"></div>
+                <div class="fa-regular fa-circle"></div>
+                <div class="fa-regular fa-circle"></div>
+                <div class="fa-regular fa-circle"></div>
+                <div class="fa-regular fa-circle"></div>
+                <div class="fa-regular fa-circle"></div>
+                <div class="fa-regular fa-circle"></div>
+                <div class="fa-regular fa-circle"></div>
+                <div class="fa-regular fa-circle"></div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- sección de destacados termina -->
+
+    <!-- sección de suscripción comienza -->
+    <section class="subscribe">
+
+        <h3>Suscríbete para recibir las últimas actualizaciones</h3>
+
+        <p>Recibe noticias y ofertas exclusivas directamente en tu correo.</p>
+
+        <form action="">
+            <input type="email" placeholder="Ingresa tu correo electrónico">
+
+            <input type="submit" placeholder="Suscribirse">
+        </form>
+    </section>
+    <!-- sección de suscripción termina -->
+
+    <!-- sección de reseñas comienza -->
+    <section class="reviews" id="reviews">
+
+        <h1 class="heading">Reseñas de <span>Clientes</span></h1>
+
+        <div class="review-slider">
+            <div class="fa-solid fa-angle-left rPreNext" id="rPreBtn"></div>
+            <div class="review-wrapper">
+
+                <div class="review-wrapper-box">
+
+                    <div class="box active">
+                        <img src="./image/img1.webp" alt="Cliente 1">
+                        <div class="content">
+                            <p>¡Compré el Zentorno y ahora soy el rey de las calles de Los Santos! Excelente servicio.</p>
+                            <h3>Michael De Santa</h3>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <img src="./image/img2.webp" alt="Cliente 2">
+                        <div class="content">
+                            <p>El Adder es una bestia. ¡Perfecto para escapar de la policía en mis misiones!</p>
+                            <h3>Franklin Clinton</h3>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <img src="./image/img3.webp" alt="Cliente 3">
+                        <div class="content">
+                            <p>El Osiris no solo es rápido, también es elegante. ¡Ideal para mis negocios en Vinewood!</p>
+                            <h3>Trevor Philips</h3>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <img src="./image/img4.webp" alt="Cliente 4">
+                        <div class="content">
+                            <p>El T20 es perfecto para las carreras clandestinas. ¡Gracias por el excelente servicio!</p>
+                            <h3>Lamar Davis</h3>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <img src="./image/img5.webp" alt="Cliente 5">
+                        <div class="content">
+                            <p>El Itali GTO es mi favorito. ¡No hay mejor lugar para comprar autos en Los Santos!</p>
+                            <h3>Ron Jakowski</h3>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <img src="./image/img6.webp" alt="Cliente 6">
+                        <div class="content">
+                            <p>El Cheetah es increíblemente rápido. ¡Perfecto para mis escapadas en Blaine County!</p>
+                            <h3>Wade Hebert</h3>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="fa-solid fa-angle-right rPreNext" id="rNextBtn"></div>
+
+            <div class="rActCircle">
+                <div class="fa-regular fa-solid fa-circle"></div>
+                <div class="fa-regular fa-circle"></div>
+                <div class="fa-regular fa-circle"></div>
+                <div class="fa-regular fa-circle"></div>
+                <div class="fa-regular fa-circle"></div>
+                <div class="fa-regular fa-circle"></div>
+            </div>
+        </div>
+    </section>
+    <!-- sección de reseñas termina -->
+
+    <!-- sección de contacto comienza -->
+    <section class="contact" id="contact">
+        <h1 class="heading"><span>Contáctanos</span></h1>
+
+        <div class="row">
+
+            <iframe class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.476566451316!2d-75.57982082573488!3d6.244338695465778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429f1f2f2f2f3%3A0x8e4429f1f2f2f2f3!2sMedell%C3%ADn%2C%20Antioquia%2C%20Colombia!5e0!3m2!1ses!2sco!4v1676226353123!5m2!1ses!2sco"
+            allowfullscreen="" title="Mapa de Medellín"></iframe>
+
+            <form action="">
+                <h3>Ponte en Contacto</h3>
+                <input type="text" placeholder="Nombre" class="box">
+                <input type="email" placeholder="Correo Electrónico" class="box">
+                <input type="number" placeholder="Teléfono" class="box">
+                <textarea class="box" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                <input type="submit" value="Enviar Mensaje" class="btn">
+            </form>
+
+        </div>
+    </section>
+    <!-- sección de contacto termina -->
+
+    <!-- sección de pie de página comienza -->
+    <section class="footer">
+
+        <div class="footer-box-container">
+
+            <div class="box">
+                <h3>Nuestras Sucursales</h3>
+                <a href="#"><i class="fa-solid fa-location-dot"></i> Los Santos</a>
+                <a href="#"><i class="fa-solid fa-location-dot"></i> Blaine County</a>
+                <a href="#"><i class="fa-solid fa-location-dot"></i> Vinewood</a>
+                <a href="#"><i class="fa-solid fa-location-dot"></i> Paleto Bay</a>
+            </div>
+
+            <div class="box">
+                <h3>Enlaces Rápidos</h3>
+                <a href="#home"><i class="fa-solid fa-arrow-right"></i> Inicio</a>
+                <a href="#vehicles"><i class="fa-solid fa-arrow-right"></i> Vehículos</a>
+                <a href="#services"><i class="fa-solid fa-arrow-right"></i> Servicios</a>
+                <a href="#featured"><i class="fa-solid fa-arrow-right"></i> Destacados</a>
+                <a href="#reviews"><i class="fa-solid fa-arrow-right"></i> Reseñas</a>
+                <a href="#contact"><i class="fa-solid fa-arrow-right"></i> Contacto</a>
+            </div>
+
+            <div class="box">
+                <h3>Contáctanos</h3>
+                <a href="#"><i class="fa-solid fa-phone"></i> +123-456-7890</a>
+                <a href="#"><i class="fa-solid fa-envelope"></i> gta4stars@gmail.com</a>
+                <a href="#"><i class="fa-solid fa-location-dot"></i> Los Santos, GTA V</a>
+            </div>
+
+            <div class="box">
+                <h3>Redes Sociales</h3>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">Copyright &copy; | Todos los derechos reservados</div>
+    </section>
+    <!-- sección de pie de página termina -->
+
+    <!-- enlace a Font Awesome -->
+    <script src="https://kit.fontawesome.com/ca9a6c5a17.js" crossorigin="anonymous"></script>
+
+    <!-- importar archivo JavaScript personalizado -->
+    <script src="js/script.js"></script>
+    <script src="js/validate-user.js"></script>
+
+</body>
+
+</html>
