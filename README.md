@@ -37,16 +37,19 @@ GTA4STARS/
    ```bash
    git clone https://github.com/tu-usuario/GTA4STARS.git
    ```
-2. Abrir el archivo `index.html` con navegador de preferencia.
+2. Abrir el archivo `index.html` con el navegador de preferencia.
 
 ¡Listo! Ya se puede visualizar la pagina.
 
+# Todos los derechos reservados
+
+**© 2025. Todos los derechos reservados.**  
+Este documento y su contenido están protegidos por derechos de autor y otras leyes de propiedad intelectual. No se permite la reproducción, distribución o modificación sin el consentimiento expreso del titular de los derechos.
+
 ## 👨‍💻 Autores
+- **Rostin Santiago Alzate Montoya**  
+- **Daniel Henao Metaute**  
+- **Miguel Andres Herazo Domínguez**  
 
-- Rostin Santiago Montoya
-- Daniel Henao  
-- Miguel Herazo
-
-Este proyecto fue creado como parte de la entrega del proyecto de Desarrollo Web
-Universidad de Medellín
-2025
+Este proyecto fue creado como parte de la entrega del proyecto de Desarrollo Web  
+Universidad de Medellín, 2025.
