@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class ReviewComponent implements OnInit {
   reviews = [
     {
-      img: 'https://i.ibb.co/Jt5Z6PB/gta-bg.jpg',
+      img: 'https://static.wikia.nocookie.net/gtawiki/images/a/a8/MichaelDeSanta-GTAVee.png/revision/latest?cb=20220318234033https://th.bing.com/th/id/OIP.6GwNtp1SbBDuKe2-KGZdZAHaEK?cb=iwp1&rs=1&pid=ImgDetMain',
       alt: 'Cliente 1',
       message: '¡Compré el Zentorno y ahora soy el rey de las calles de Los Santos! Excelente servicio.',
       name: 'Michael De Santa',

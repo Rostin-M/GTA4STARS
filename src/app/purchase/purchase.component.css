@@ -106,7 +106,7 @@ body {
     display: inline-block;
     padding: 12px 24px;
     background-color: var(--primary-color);
-    color: var(--dark-color);
+    color: #0a0a0a;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -120,7 +120,8 @@ body {
 .btn:hover {
     background-color: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 190, 11, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 187, 0, 0.3);
+    color: #f8f9fa;
 }
 
 .btn-block {

@@ -27,12 +27,13 @@
       <span>${{ selectedVehicle.price | number }}</span>
     </div>
 
+    <!-- Condicionar la visibilidad del botón -->
     <button *ngIf="!showPaymentForm" class="btn btn-block glow-effect" (click)="proceedToPayment()">
       Proceder al Pago
     </button>
   </div>
 
-  <div *ngIf="showPaymentForm" id="paymentForm" class="payment-form">
+  <div *ngIf="showPaymentForm" id="paymentForm" class="paymentForm">
     <h2>Información de Pago <span class="demo-badge">DEMO</span></h2>
     <div class="payment-methods">
       <div *ngFor="let m of paymentMethods"

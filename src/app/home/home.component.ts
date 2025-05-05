@@ -5,6 +5,7 @@ import { ReviewComponent } from "../reviews/reviews.component";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -21,7 +22,7 @@ export class HomeComponent implements AfterViewInit {
       icon: 'fa-car',
       titulo: 'Conocer Modelos',
       descripcion: 'Explora nuestra amplia gama de vehículos y encuentra el modelo perfecto para ti.',
-      enlace: '#featured',
+      enlace: "/vehicles",
       textoBoton: 'Descubre Más'
     },
     {

@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-purchase',
+  imports: [CommonModule, FormsModule],
+  standalone: true,
   templateUrl: './purchase.component.html',
   styleUrls: ['./purchase.component.css'],
-  standalone: true,
-  imports: [CommonModule],
+  
 })
 export class PurchaseComponent implements OnInit {
   loading = true;
@@ -49,7 +51,6 @@ export class PurchaseComponent implements OnInit {
   }
 
   proceedToPayment(): void {
-    console.log('Botón clickeado');
     this.showPaymentForm = true;
     setTimeout(() => window.scrollTo({ top:  this.getOffsetTop('paymentForm') - 20, behavior: 'smooth' }), 0);
   }
@@ -68,11 +69,13 @@ export class PurchaseComponent implements OnInit {
       alert('Por favor completa todos los campos');
       return;
     }
-
+  
     this.loading = true;
     this.simulateProcessing(() => {
       this.loading = false;
       this.showPaymentForm = false;
+  
+      // Asignar detalles de la transacción
       const now = new Date();
       this.transactionDetails = {
         id: `DEMO-${Math.floor(Math.random() * 1e12)}`,
@@ -80,7 +83,14 @@ export class PurchaseComponent implements OnInit {
         method: this.selectedPaymentMethod,
         amount: this.selectedVehicle.price
       };
-      setTimeout(() => window.scrollTo({ top: this.getOffsetTop('paymentConfirmation') - 20, behavior: 'smooth' }), 0);
+  
+      // Desplazar a la sección de confirmación
+      setTimeout(() => {
+        const offsetTop = this.getOffsetTop('paymentConfirmation');
+        if (offsetTop) {
+          window.scrollTo({ top: offsetTop - 20, behavior: 'smooth' });
+        }
+      }, 0);
     });
   }
 

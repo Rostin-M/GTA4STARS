@@ -1,0 +1,484 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel de Administración - GTA4STARS</title>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+
+            <div class="sidebar-menu">
+                <div class="menu-title">PRINCIPAL</div>
+                <div class="menu-item active" data-section="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </div>
+                <div class="menu-item" data-section="users">
+                    <i class="fas fa-users"></i>
+                    <span>Usuarios</span>
+                </div>
+                <div class="menu-item" data-section="cars">
+                    <i class="fas fa-car"></i>
+                    <span>Vehículos</span>
+                </div>
+                <div class="menu-item" data-section="sales">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>Ventas</span>
+                </div>
+                <div class="menu-title">CONFIGURACIÓN</div>
+                <div class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Ajustes</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h2>Panel de Administración</h2>
+                <div class="user-info">
+                    <div class="user-avatar"> |O| </div>
+                    <div class="user-name">Admin</div>
+                    <div class="dropdown">
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Perfil</a>
+                            <a href="#" class="dropdown-item">Ajustes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Section -->
+            <div class="content-section active" id="dashboard">
+                <div class="dashboard-cards">
+                  <div class="card" *ngFor="let card of dashboardCards">
+                    <div class="card-header">
+                      <div class="card-title">{{ card.title }}</div>
+                      <div class="card-icon">
+                        <i [class]="card.icon"></i>
+                      </div>
+                    </div>
+                    <div class="card-value">{{ card.value }}</div>
+                    <div class="card-description">{{ card.description }}</div>
+                  </div>
+                </div>
+              
+                <div class="section-header">
+                  <div class="section-title">Ventas Recientes</div>
+                </div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Cliente</th>
+                      <th>Vehículo</th>
+                      <th>Precio</th>
+                      <th>Fecha</th>
+                      <th>Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let sale of recentSales">
+                      <td>{{ sale.id }}</td>
+                      <td>{{ sale.client }}</td>
+                      <td>{{ sale.vehicle }}</td>
+                      <td>{{ sale.price }}</td>
+                      <td>{{ sale.date }}</td>
+                      <td>
+                        <span class="status" [ngClass]="{
+                          'active': sale.status === 'Completado',
+                          'inactive': sale.status === 'Cancelado',
+                          'pending': sale.status === 'Pendiente'
+                        }">{{ sale.status }}</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            <!-- Users Section -->
+            <div class="content-section" id="users">
+                <div class="section-header">
+                  <div class="section-title">Gestión de Usuarios</div>
+                  <div class="action-buttons">
+                    <div class="search-bar">
+                      <i class="fas fa-search"></i>
+                      <input type="text" placeholder="Buscar usuario...">
+                    </div>
+                    <button class="btn btn-primary" id="add-user-btn">
+                      <i class="fas fa-plus"></i> Añadir Usuario
+                    </button>
+                  </div>
+                </div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nombre</th>
+                      <th>Email</th>
+                      <th>Rol</th>
+                      <th>Registro</th>
+                      <th>Estado</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let user of users">
+                      <td>{{ user.id }}</td>
+                      <td>{{ user.name }}</td>
+                      <td>{{ user.email }}</td>
+                      <td>{{ user.role }}</td>
+                      <td>{{ user.registrationDate }}</td>
+                      <td>
+                        <span class="status" [ngClass]="{
+                          'active': user.status === 'Activo',
+                          'inactive': user.status === 'Inactivo',
+                          'pending': user.status === 'Pendiente'
+                        }">{{ user.status }}</span>
+                      </td>
+                      <td>
+                        <div class="table-actions">
+                          <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                          <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                          <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="pagination">
+                  <div class="page-item">
+                    <a href="#" class="page-link"><i class="fas fa-chevron-left"></i></a>
+                  </div>
+                  <div class="page-item active">
+                    <a href="#" class="page-link">1</a>
+                  </div>
+                  <div class="page-item">
+                    <a href="#" class="page-link">2</a>
+                  </div>
+                  <div class="page-item">
+                    <a href="#" class="page-link">3</a>
+                  </div>
+                  <div class="page-item">
+                    <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Cars Section -->
+            <div class="content-section" id="cars">
+                <div class="section-header">
+                  <div class="section-title">Gestión de Vehículos</div>
+                  <div class="action-buttons">
+                    <div class="search-bar">
+                      <i class="fas fa-search"></i>
+                      <input type="text" placeholder="Buscar vehículo...">
+                    </div>
+                    <button class="btn btn-primary" id="add-car-btn">
+                      <i class="fas fa-plus"></i> Añadir Vehículo
+                    </button>
+                  </div>
+                </div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Imagen</th>
+                      <th>Modelo</th>
+                      <th>Marca</th>
+                      <th>Precio</th>
+                      <th>Stock</th>
+                      <th>Estado</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let car of cars">
+                      <td>{{ car.id }}</td>
+                      <td><img [src]="car.image" alt="{{ car.model }}" class="car-image"></td>
+                      <td>{{ car.model }}</td>
+                      <td>{{ car.brand }}</td>
+                      <td>{{ car.price }}</td>
+                      <td>{{ car.stock }}</td>
+                      <td>
+                        <span class="status" [ngClass]="{
+                          'active': car.status === 'Disponible',
+                          'inactive': car.status === 'Agotado',
+                          'pending': car.status === 'En Tránsito'
+                        }">{{ car.status }}</span>
+                      </td>
+                      <td>
+                        <div class="table-actions">
+                          <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                          <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                          <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="pagination">
+                  <div class="page-item">
+                    <a href="#" class="page-link"><i class="fas fa-chevron-left"></i></a>
+                  </div>
+                  <div class="page-item active">
+                    <a href="#" class="page-link">1</a>
+                  </div>
+                  <div class="page-item">
+                    <a href="#" class="page-link">2</a>
+                  </div>
+                  <div class="page-item">
+                    <a href="#" class="page-link">3</a>
+                  </div>
+                  <div class="page-item">
+                    <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Sales Section -->
+            <div class="content-section" id="sales">
+                <div class="section-header">
+                  <div class="section-title">Gestión de Ventas</div>
+                  <div class="action-buttons">
+                    <div class="search-bar">
+                      <i class="fas fa-search"></i>
+                      <input type="text" placeholder="Buscar venta...">
+                    </div>
+                    <button class="btn btn-primary" id="add-sale-btn">
+                      <i class="fas fa-plus"></i> Registrar Venta
+                    </button>
+                  </div>
+                </div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Cliente</th>
+                      <th>Vehículo</th>
+                      <th>Precio</th>
+                      <th>Fecha</th>
+                      <th>Método de Pago</th>
+                      <th>Estado</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let sale of sales">
+                      <td>{{ sale.id }}</td>
+                      <td>{{ sale.client }}</td>
+                      <td>{{ sale.vehicle }}</td>
+                      <td>{{ sale.price }}</td>
+                      <td>{{ sale.date }}</td>
+                      <td>{{ sale.paymentMethod }}</td>
+                      <td>
+                        <span class="status" [ngClass]="{
+                          'active': sale.status === 'Completado',
+                          'inactive': sale.status === 'Cancelado',
+                          'pending': sale.status === 'Pendiente'
+                        }">{{ sale.status }}</span>
+                      </td>
+                      <td>
+                        <div class="table-actions">
+                          <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                          <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                          <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="pagination">
+                  <div class="page-item">
+                    <a href="#" class="page-link"><i class="fas fa-chevron-left"></i></a>
+                  </div>
+                  <div class="page-item active">
+                    <a href="#" class="page-link">1</a>
+                  </div>
+                  <div class="page-item">
+                    <a href="#" class="page-link">2</a>
+                  </div>
+                  <div class="page-item">
+                    <a href="#" class="page-link">3</a>
+                  </div>
+                  <div class="page-item">
+                    <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- Add User Modal -->
+    <div class="modal" id="add-user-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Añadir Nuevo Usuario</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" placeholder="Ingrese nombre completo">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="Ingrese email">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" placeholder="Ingrese contraseña">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Rol</label>
+                    <select class="form-control">
+                        <option>Cliente</option>
+                        <option>Cliente VIP</option>
+                        <option>Administrador</option>
+                        <option>Vendedor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Estado</label>
+                    <select class="form-control">
+                        <option>Activo</option>
+                        <option>Inactivo</option>
+                        <option>Pendiente</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger close-modal">Cancelar</button>
+                <button class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Car Modal -->
+    <div class="modal" id="add-car-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Añadir Nuevo Vehículo</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Modelo</label>
+                    <input type="text" class="form-control" placeholder="Ingrese modelo">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Marca</label>
+                    <input type="text" class="form-control" placeholder="Ingrese marca">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Precio</label>
+                    <input type="text" class="form-control" placeholder="Ingrese precio">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Stock</label>
+                    <input type="number" class="form-control" placeholder="Ingrese cantidad en stock">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Color</label>
+                    <input type="text" class="form-control" placeholder="Ingrese color">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Año</label>
+                    <input type="number" class="form-control" placeholder="Ingrese año">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Estado</label>
+                    <select class="form-control">
+                        <option>Disponible</option>
+                        <option>Agotado</option>
+                        <option>En Tránsito</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger close-modal">Cancelar</button>
+                <button class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Sale Modal -->
+    <div class="modal" id="add-sale-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Registrar Nueva Venta</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Cliente</label>
+                    <select class="form-control">
+                        <option>Seleccionar cliente</option>
+                        <option>Michael De Santa</option>
+                        <option>Franklin Clinton</option>
+                        <option>Trevor Philips</option>
+                        <option>Lamar Davis</option>
+                        <option>Lester Crest</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Vehículo</label>
+                    <select class="form-control">
+                        <option>Seleccionar vehículo</option>
+                        <option>Pegassi Zentorno</option>
+                        <option>Grotti Turismo R</option>
+                        <option>Truffade Adder</option>
+                        <option>Vapid Sandking XL</option>
+                        <option>Karin Dilettante</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Precio</label>
+                    <input type="text" class="form-control" placeholder="Precio automático" disabled>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Método de Pago</label>
+                    <select class="form-control">
+                        <option>Efectivo</option>
+                        <option>Tarjeta</option>
+                        <option>Transferencia</option>
+                        <option>Financiación</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Fecha</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Estado</label>
+                    <select class="form-control">
+                        <option>Completado</option>
+                        <option>Pendiente</option>
+                        <option>Cancelado</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger close-modal">Cancelar</button>
+                <button class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="delete-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Confirmar Eliminación</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que deseas eliminar este elemento? Esta acción no se puede deshacer.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary close-modal">Cancelar</button>
+                <button class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
+    </div>

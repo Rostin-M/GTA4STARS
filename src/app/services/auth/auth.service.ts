@@ -31,13 +31,22 @@ export class AuthService {
   }
 
   login(email: string, password: string): { success: boolean; message: string } {
+    // Verificar si es el usuario admin
+    if (email === 'admin' && password === 'admin') {
+      const adminUser: User = { firstname: 'Admin', lastname: 'User', email, password };
+      localStorage.setItem(this.sessionKey, JSON.stringify(adminUser));
+      this.currentUserSubject.next(adminUser); // emito nuevo usuario
+      this.router.navigate(['/admin']); // redirijo a la ruta de admin
+      return { success: true, message: 'Inicio de sesión como administrador exitoso.' };
+    }
+
     const users = this.getUsers();
     const user = users.find(u => u.email === email && u.password === password);
     if (!user) {
       return { success: false, message: 'Correo o contraseña incorrectos.' };
     }
     localStorage.setItem(this.sessionKey, JSON.stringify(user));
-    this.currentUserSubject.next(user);            // emito nuevo usuario
+    this.currentUserSubject.next(user); // emito nuevo usuario
     return { success: true, message: 'Inicio de sesión exitoso.' };
   }
 

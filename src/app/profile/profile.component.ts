@@ -20,18 +20,18 @@ export class ProfileComponent implements AfterViewInit {
     totalReviews: 28,
     details: {
       fullName: 'Carlos Rodríguez Méndez',
-      companyName: 'AutoVentas Premium S.A.',
+      companyName: 'GTA4STARS',
       email: 'carlos.rodriguez@autoventas.com',
-      phone: '+52 55 1234 5678',
-      address: 'Av. Insurgentes Sur 1234, Col. Del Valle, CDMX'
+      phone: '+57 123 456 7890',
+      address: 'Medellín, Colombia',
     }
   };
 
   // Historial de compras
   purchaseHistory = [
-    { id: 1, vehicle: 'Toyota Corolla', date: '2023-10-01', amount: '$20,000', status: 'Completed', statusClass: 'completed' },
-    { id: 2, vehicle: 'Honda Civic', date: '2023-09-15', amount: '$18,000', status: 'Pending', statusClass: 'pending' },
-    { id: 3, vehicle: 'Ford Focus', date: '2023-08-20', amount: '$22,000', status: 'Cancelled', statusClass: 'cancelled' }
+    { id: 1, vehicle: 'Pegassi Zentorno', date: '2023-10-01', amount: '$725,000', status: 'Completed', statusClass: 'completed' },
+    { id: 2, vehicle: 'Dewbauchee Massacro', date: '2023-09-15', amount: '$275,000', status: 'Pending', statusClass: 'pending' },
+    { id: 3, vehicle: 'Bravado Banshee 900R', date: '2023-08-20', amount: '$565,000', status: 'Cancelled', statusClass: 'cancelled' }
   ];
 
   // Comentarios y calificaciones

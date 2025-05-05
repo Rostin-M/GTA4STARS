@@ -13,7 +13,7 @@ import { ErrorService } from '../services/error/error.service';
 })
 export class ErrorComponent {
   errorMessage: string = 'Algo salió mal';
-  errorQuestion: string = '¿Has intentado apagarlo y encenderlo de nuevo?';
+  errorQuestion: string = '¿Has intentado reiniciar?';
 
   constructor(private errorService: ErrorService) {
     this.errorService.errorMessage$.subscribe(
