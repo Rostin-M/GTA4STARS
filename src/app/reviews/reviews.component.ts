@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class ReviewComponent implements OnInit {
   reviews = [
     {
-      img: 'https://static.wikia.nocookie.net/gtawiki/images/a/a8/MichaelDeSanta-GTAVee.png/revision/latest?cb=20220318234033https://th.bing.com/th/id/OIP.6GwNtp1SbBDuKe2-KGZdZAHaEK?cb=iwp1&rs=1&pid=ImgDetMain',
+      img: '../assets/image/img1.webp',
       alt: 'Cliente 1',
       message: '¡Compré el Zentorno y ahora soy el rey de las calles de Los Santos! Excelente servicio.',
       name: 'Michael De Santa',
@@ -19,7 +19,7 @@ export class ReviewComponent implements OnInit {
       car: 'Pegassi Zentorno'
     },
     {
-      img: 'https://i.ibb.co/Jt5Z6PB/gta-bg.jpg',
+      img: '../assets/image/img2.webp',
       alt: 'Cliente 2',
       message: 'El Adder es una bestia. ¡Perfecto para escapar de la policía en mis misiones!',
       name: 'Franklin Clinton',
@@ -27,7 +27,7 @@ export class ReviewComponent implements OnInit {
       car: 'Truffade Adder'
     },
     {
-      img: 'https://i.ibb.co/Jt5Z6PB/gta-bg.jpg',
+      img: '../assets/image/img3.webp',
       alt: 'Cliente 3',
       message: 'El Osiris no solo es rápido, también es elegante. ¡Ideal para mis negocios en Vinewood!',
       name: 'Trevor Philips',
@@ -35,7 +35,7 @@ export class ReviewComponent implements OnInit {
       car: 'Pegassi Osiris'
     },
     {
-      img: 'https://i.ibb.co/Jt5Z6PB/gta-bg.jpg',
+      img: '../assets/image/img4.webp',
       alt: 'Cliente 4',
       message: 'El T20 es perfecto para las carreras clandestinas. ¡Gracias por el excelente servicio!',
       name: 'Lamar Davis',
@@ -43,7 +43,7 @@ export class ReviewComponent implements OnInit {
       car: 'Progen T20'
     },
     {
-      img: 'https://i.ibb.co/Jt5Z6PB/gta-bg.jpg',
+      img: '../assets/image/img5.webp',
       alt: 'Cliente 5',
       message: 'El Itali GTO es mi favorito. ¡No hay mejor lugar para comprar autos en Los Santos!',
       name: 'Ron Jakowski',
@@ -51,7 +51,7 @@ export class ReviewComponent implements OnInit {
       car: 'Grotti Itali GTO'
     },
     {
-      img: 'https://i.ibb.co/Jt5Z6PB/gta-bg.jpg',
+      img: '../assets/image/img6.webp',
       alt: 'Cliente 6',
       message: 'El Cheetah es increíblemente rápido. ¡Perfecto para mis escapadas en Blaine County!',
       name: 'Wade Hebert',
