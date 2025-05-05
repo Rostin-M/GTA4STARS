@@ -1,0 +1,37 @@
+<header>
+    <div class="logo">GTA4STARS</div>
+    <div class="tagline">Los mejores vehículos de Los Santos</div>
+  </header>
+  
+  <div class="container">
+    <h2 class="section-title">Vehículos Premium</h2>
+  
+    <div class="car-grid">
+      <div *ngFor="let vehicle of vehicles" class="car-card">
+        <div class="car-image" [style.backgroundImage]="'url(' + vehicle.image + ')'">
+          <div class="car-overlay">
+
+            <a href="#" class="car-action">Personalizar</a>
+            <a href="/purchase" aria-label="Realizar compra" class="car-action">Comprar</a>
+
+          </div>
+        </div>
+        <div class="car-details">
+          <h3 class="car-name">{{ vehicle.name }}</h3>
+          <div class="car-price">{{ vehicle.price }}</div>
+          <p class="car-description">{{ vehicle.description }}</p>
+          <div class="car-features">
+            <span>Velocidad: {{ vehicle.features.speed }}</span>
+            <span>Aceleración: {{ vehicle.features.acceleration }}</span>
+            <span>Manejo: {{ vehicle.features.handling }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="footer-logo">LEGENDARY MOTORSPORT</div>
+    <p>&copy; 2023 Rockstar Games. Todos los derechos reservados.</p>
+    <p>Los vehículos mostrados son propiedad de sus respectivas marcas en el universo de GTA V.</p>
+  </footer>

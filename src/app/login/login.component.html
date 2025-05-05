@@ -1,0 +1,95 @@
+<div class="login-backdrop">
+  <div class="login-container">
+    <!-- Botón para cerrar el formulario -->
+    <button class="close-btn" (click)="closeForm()">×</button>
+    <h2 class="login-title">Inicia Sesión Aquí</h2>
+
+    <!-- Formulario Angular con ngForm y ngSubmit -->
+    <form
+      class="login-form"
+      #loginForm="ngForm"
+      (ngSubmit)="login()"
+    >
+
+      <!-- Correo Electrónico -->
+      <div class="input-group">
+        <label for="email" class="input-label">Correo Electrónico</label>
+        <div class="input-icon">
+          <i class="fas fa-user"></i>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Correo Electrónico"
+            class="input-field"
+            [(ngModel)]="email"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Contraseña -->
+      <div class="input-group">
+        <label for="password" class="input-label">Contraseña</label>
+        <div class="input-icon">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Contraseña"
+            class="input-field"
+            [(ngModel)]="password"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Opciones -->
+      <div class="login-options">
+        <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+        <label class="remember-me">
+          <input
+            type="checkbox"
+            name="rememberMe"
+            [(ngModel)]="rememberMe"
+          />
+          <span>Recuérdame</span>
+        </label>
+      </div>
+
+      <!-- Mensaje de error -->
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Botón de Inicio de Sesión -->
+      <button
+        type="submit"
+        class="login-btn"
+        [disabled]="loginForm.invalid"
+      >
+        INICIAR SESIÓN
+      </button>
+
+      <!-- Login con Google -->
+      <button
+        type="button"
+        class="google-btn"
+        (click)="loginWithGoogle()"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png"
+          alt="Google Logo"
+          class="google-logo"
+        />
+      </button>
+
+      <!-- Enlace a Registro -->
+      <p class="register-link">
+        ¿No tienes una cuenta?
+        <a (click)="openRegister()">Registrarse</a>
+      </p>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTA Car Sales</title>
+  <link rel="stylesheet" href="home.component.css">
+</head>
+<body>
+  <main>
+    <div class="video-container">
+      <video autoplay muted loop class="home-main-video" #videoElement>
+        <source src="assets/video/World_Cinematics.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de videos.
+      </video>
+      <div class="video-text">Bienvenido a GTA4STARS</div>
+    </div>    
+
+    <section class="icons-container">
+      <div class="icons" *ngFor="let item of iconos">
+        <i class="fa-solid" [ngClass]="item.icon"></i>
+        <div class="content">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </div>
+      </div>
+    </section>
+
+    <app-gallery></app-gallery>
+
+    <section class="services" id="services">
+      <h1 class="heading">Nuestros <span>Servicios</span></h1>
+    
+      <div class="box-container">
+        <div class="box" *ngFor="let servicio of servicios">
+          <i class="fa-solid" [ngClass]="servicio.icon"></i>
+          <h3>{{ servicio.titulo }}</h3>
+          <p>{{ servicio.descripcion }}</p>
+          <a [href]="servicio.enlace" class="btn">{{ servicio.textoBoton }}</a>
+        </div>
+      </div>
+    </section>
+
+    <app-reviews></app-reviews>
+
+    
+    <section class="subscribe">
+      <h3>Suscríbete para recibir las últimas actualizaciones</h3>
+      <p>Recibe noticias y ofertas exclusivas directamente en tu correo.</p>
+
+      <form (ngSubmit)="onSubmit()">
+        <input
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          placeholder="Ingresa tu correo electrónico"
+          required
+        />
+        <input type="submit" value="Suscribirse" />
+      </form>
+    </section>
+
+
+    
+  </main>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="footer-text">&copy; 2025 GTA4STARS. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

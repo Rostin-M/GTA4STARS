@@ -1,0 +1,63 @@
+<header class="header">
+  <nav class="navbar" aria-label="Navegación principal">
+    <!-- Bloque Izquierdo: logo + enlaces -->
+    <div class="nav-left">
+      <a href="/" class="logo-container" aria-label="Ir al inicio">
+        <span class="logo-gta4">GTA4</span><span class="logo-stars">STARS</span>
+      </a>
+
+      <div class="nav-links">
+        <a routerLink="/home" aria-label="Ir a Inicio">Inicio</a>
+
+        <a routerLink="/vehicles" aria-label="Ir a Vehículos">Vehículos</a>
+        <a href="#services">Servicios</a>
+        <a href="#featured">Destacados</a>
+        <a href="#reviews">Reseñas</a>
+        <a href="#contact">Contacto</a>
+      </div>
+    </div>
+
+    <!-- Bloque Derecho: auth / perfil -->
+    <div class="nav-right">
+      <!-- Barra de búsqueda -->
+      <div class="search-bar">
+        <input
+          type="text"
+          placeholder="Buscar..."
+          aria-label="Buscar"
+          class="search-input"
+          (input)="onSearch($event)"
+        />
+        <button class="search-btn" (click)="performSearch()">
+          🔍
+        </button>
+      </div>
+
+      <!-- Estado NO logged-in -->
+      <button
+        *ngIf="!currentUser"
+        class="nav-btn"
+        (click)="openLoginDialog()"
+      >
+        Iniciar Sesión
+      </button>
+
+      <!-- Estado logged-in -->
+      <ng-container *ngIf="currentUser">
+        <span class="nav-greeting">Hola {{ currentUser.firstname }}!</span>
+        <div class="profile-container">
+          <img
+            src="/assets/general/profile-placeholder.png"
+            alt="Avatar de {{ currentUser.firstname }}"
+            class="profile-img"
+            routerLink="/profile"
+
+          />
+        </div>
+        <button class="nav-btn logout-btn" (click)="logout()">
+          Cerrar Sesión
+        </button>
+      </ng-container>
+    </div>
+  </nav>
+</header>

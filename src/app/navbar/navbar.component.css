@@ -1,0 +1,244 @@
+/* Variables de color */
+:root {
+  --navbar-height: 4rem;
+  --primary-color: #f9d806;
+  --text-primary: #fff;
+  --background-dark: #251c12;
+  --hover-yellow: #ffee80;
+  --text-dark: #030100;
+}
+
+/* ------------- NAVBAR ------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: rgba(37, 28, 18, 0.8);
+  color: var(--text-primary);
+  height: var(--navbar-height);
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Flex containers */
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left {
+  gap: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a:hover {
+  color: #ffee80;
+  transform: scale(1.1);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--hover-yellow);
+}
+
+/* Logo */
+.logo-container {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.logo-gta4 {
+  color: var(--primary-color);
+  margin-right: 0.2rem;
+}
+
+.logo-stars {
+  color: var(--text-primary);
+}
+
+/* User info */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-greeting {
+  font-size: 0.95rem;
+}
+
+.profile-img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--text-primary);
+  cursor: pointer;
+  margin: 0 1rem;
+}
+
+/* Buttons */
+.nav-btn,
+.logout-btn {
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn {
+  background-color: var(--primary-color);
+  color: var(--text-dark);
+  margin-right: 2rem;
+}
+
+.nav-btn:hover {
+  background-color: var(--hover-yellow);
+}
+
+.logout-btn {
+  margin-left: 1.5rem;
+  background: #e00;
+  color: var(--text-primary);
+}
+
+.logout-btn:hover {
+  opacity: 0.8;
+}
+
+/* Estilos para la barra de búsqueda */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Espacio entre el input y el botón */
+  margin-right: 1rem; /* Separación del resto de elementos */
+}
+
+.search-input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  width: 200px; /* Ancho fijo para el input */
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color); /* Color del borde al enfocar */
+}
+
+.search-btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--text-dark);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: var(--hover-yellow);
+}
+
+/* ------------- RESPONSIVE DESIGN ------------- */
+
+/* Tablets and smaller */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    height: auto;
+  }
+
+  .nav-left,
+  .nav-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: left;
+  }
+
+  .profile-img {
+    margin: 0;
+  }
+
+  .nav-btn {
+    width: 100%;
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .logo-container {
+    font-size: 1.2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .nav-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin-bottom: 1rem; /* Espacio inferior para separar de otros elementos */
+  }
+
+  .search-input {
+    width: 100%; /* Input ocupa todo el ancho */
+  }
+
+  .search-btn {
+    width: auto; /* Botón mantiene su tamaño */
+  }
+}

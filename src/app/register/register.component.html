@@ -1,0 +1,121 @@
+<div class="login-backdrop">
+  <div class="login-container">
+    <button class="close-btn" (click)="closeForm()">×</button>
+    <h2 class="login-title">Regístrate Aquí</h2>
+
+    <!-- Añadimos ngForm y ngSubmit -->
+    <form class="login-form" #registerForm="ngForm" (ngSubmit)="register()">
+
+      <!-- First Name -->
+      <div class="input-group">
+        <label for="firstname" class="input-label">Nombre</label>
+        <div class="input-icon">
+          <i class="fas fa-user"></i>
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            placeholder="Tu nombre"
+            class="input-field"
+            [(ngModel)]="firstname"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Last Name -->
+      <div class="input-group">
+        <label for="lastname" class="input-label">Apellido</label>
+        <div class="input-icon">
+          <i class="fas fa-user"></i>
+          <input
+            type="text"
+            id="lastname"
+            name="lastname"
+            placeholder="Tu apellido"
+            class="input-field"
+            [(ngModel)]="lastname"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="input-group">
+        <label for="email" class="input-label">Correo Electrónico</label>
+        <div class="input-icon">
+          <i class="fas fa-envelope"></i>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="correo@ejemplo.com"
+            class="input-field"
+            [(ngModel)]="email"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="input-group">
+        <label for="password" class="input-label">Contraseña</label>
+        <div class="input-icon">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Contraseña"
+            class="input-field"
+            [(ngModel)]="password"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="input-group">
+        <label for="confirmPassword" class="input-label">Confirmar Contraseña</label>
+        <div class="input-icon">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Repite tu contraseña"
+            class="input-field"
+            [(ngModel)]="confirmPassword"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Mostrar mensaje de error -->
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Register Button sin (click) directo -->
+      <button type="submit" class="login-btn" [disabled]="registerForm.invalid">
+        REGISTRARSE
+      </button>
+
+      <!-- Register with Google -->
+      <button type="button" class="google-btn" (click)="registerWithGoogle()">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png"
+          alt="Google Logo"
+          class="google-logo"
+        />
+        Registrarse con Google
+      </button>
+
+      <!-- Back to Login -->
+      <p class="register-link">
+        ¿Ya tienes una cuenta?
+        <a (click)="openLogin()">Inicia sesión</a>
+      </p>
+    </form>
+  </div>
+</div>

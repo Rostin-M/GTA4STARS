@@ -1,0 +1,84 @@
+<div *ngIf="loading" id="loadingScreen" class="loading-screen">
+  <div class="security-icon">🔒</div>
+  <div class="loading-text">
+    <p>GTA4STARS está encriptando tu conexión</p>
+    <p>Por favor espera...</p>
+  </div>
+  <div class="progress-bar">
+    <div class="progress" [style.width.%]="progress"></div>
+  </div>
+</div>
+
+<div *ngIf="!loading" class="container">
+  <div class="header">
+    <span class="demo-badge">SIMULACIÓN DEMO</span>
+    <h1>Pasarela de Pago</h1>
+    <p>Esta es una simulación y no procesa pagos reales</p>
+  </div>
+
+  <div class="product-summary">
+    <h2>Resumen de Compra</h2>
+    <div class="product-item">
+      <span class="product-name">{{ selectedVehicle.name }}</span>
+      <span class="product-price">${{ selectedVehicle.price | number }}</span>
+    </div>
+    <div class="total-section">
+      <span>Total:</span>
+      <span>${{ selectedVehicle.price | number }}</span>
+    </div>
+
+    <button *ngIf="!showPaymentForm" class="btn btn-block glow-effect" (click)="proceedToPayment()">
+      Proceder al Pago
+    </button>
+  </div>
+
+  <div *ngIf="showPaymentForm" id="paymentForm" class="payment-form">
+    <h2>Información de Pago <span class="demo-badge">DEMO</span></h2>
+    <div class="payment-methods">
+      <div *ngFor="let m of paymentMethods"
+           class="payment-method"
+           [class.active]="m.method === selectedPaymentMethod"
+           (click)="selectPaymentMethod(m.method)">
+        <div class="payment-method-icon">{{ m.icon }}</div>
+        <div>{{ m.label }}</div>
+      </div>
+    </div>
+
+    <form *ngIf="selectedPaymentMethod === 'card'" (ngSubmit)="onSubmit(cardNameInput.value, cardNumberInput.value, expiryDateInput.value, cvvInput.value)">
+      <div class="form-group">
+        <label for="cardName">Nombre en la tarjeta</label>
+        <input #cardNameInput type="text" class="form-control" id="cardName" placeholder="Nombre como aparece en la tarjeta">
+      </div>
+      <div class="form-group">
+        <label for="cardNumber">Número de tarjeta (DEMO)</label>
+        <input #cardNumberInput type="text" class="form-control" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX">
+      </div>
+      <div class="card-row">
+        <div class="form-group">
+          <label for="expiryDate">Fecha de expiración</label>
+          <input #expiryDateInput type="text" class="form-control" id="expiryDate" placeholder="MM/AA">
+        </div>
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input #cvvInput type="text" class="form-control" id="cvv" placeholder="XXX">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-block">
+        Pagar ${{ selectedVehicle.price | number }}
+      </button>
+    </form>
+  </div>
+
+  <div *ngIf="transactionDetails" id="paymentConfirmation" class="payment-confirmation">
+    <div class="confirmation-icon">✅</div>
+    <h2>¡Pago Completado con Éxito!</h2>
+    <p>Tu transacción ha sido procesada correctamente.</p>
+    <div class="confirmation-details">
+      <div><strong>ID de Transacción:</strong> {{ transactionDetails.id }}</div>
+      <div><strong>Fecha:</strong> {{ transactionDetails.date }}</div>
+      <div><strong>Método:</strong> {{ transactionDetails.method }}</div>
+      <div><strong>Monto:</strong> ${{ transactionDetails.amount | number }}</div>
+    </div>
+    <button class="btn glow-effect" (click)="downloadReceipt()">Descargar Comprobante</button>
+  </div>
+</div>

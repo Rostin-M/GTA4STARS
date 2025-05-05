@@ -1,0 +1,249 @@
+/* Contenedor principal de la galería */
+.gallery-container {
+  height: 70vh;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background: linear-gradient(to botton, #1e1e1e, #121212);
+  
+}
+
+.gallery-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.1px;
+  color: #ffeb3b;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Contenedor de los elementos de la galería */
+.gallery-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 600px; /* Ajustado para imágenes más grandes */
+}
+
+/* Botones de navegación */
+.nav-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  border-radius: 999px;
+  padding: 10px 20px;
+  background: #ffdd00;
+  color: #000;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.nav-button:hover {
+  background: #ffe84a;
+  box-shadow: 0 4px 8px rgb(0, 233, 250);}
+
+.nav-button.left {
+  left: 10px;
+}
+
+.nav-button.right {
+  right: 10px;
+}
+
+/* Elementos individuales de la galería */
+.gallery-item {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: 500px;
+  height: 300px;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1),
+  opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
+  box-shadow 0.5s ease;
+  pointer-events: none;
+  background: radial-gradient(circle at center, #222 0%, #111 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+
+.gallery-item.prev {
+  transform: translate(-150%, -50%) scale(0.8);
+  opacity: 0.3;
+  z-index: 2;
+}
+
+.gallery-item.next {
+  transform: translate(50%, -50%) scale(0.8);
+  opacity: 0.3;
+  z-index: 2;
+}
+
+.gallery-item.hidden {
+  transform: translate(200%, -50%) scale(0.5);
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Imagen del carro */
+.car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shine 2s infinite;
+  filter: drop-shadow(0 40px 10px rgba(0,0,0,0.6));
+  
+}
+
+.car-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgb(0, 233, 250);
+}
+
+
+/* Detalles del carro */
+.car-details {
+  margin-top: 10px;
+  text-align: left;
+  text-align: center;
+}
+
+.car-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.car-info {
+  font-size: 1rem;
+  margin: 0.2rem 0;
+}
+
+.view-more-button {
+  margin-top: 10px;
+  padding: 0.5rem 1rem;
+  background-color: #ffeb3b;
+  color: #121212;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-more-button:hover {
+  background-color: #fdd835;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgb(204, 202, 60);
+}
+
+/* Indicadores (dots) */
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dots span {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: gray;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dots span.active {
+  background-color: orange;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(4px); /* efecto vidrio ahumado para Safari */
+  backdrop-filter: blur(4px); /* efecto vidrio ahumado */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-content {
+  background: #121212;
+  padding: 25px 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+  border: 2px solid #fdd835;
+  position: relative;
+  animation: zoomIn 0.4s ease;
+  color: #fff;
+}
+
+.popup-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.close-button {
+  margin-top: 15px;
+  padding: 0.6rem 1.4rem;
+  background: linear-gradient(135deg, #ff6f00, #ff3d00);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.5);
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background: linear-gradient(135deg, #ff3d00, #d84315);
+  transform: scale(1.05);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,41 @@
+<div class="gallery-container">
+  <h2 class="gallery-title">CONOCE NUESTROS MODELOS</h2>
+
+  <div class="gallery-wrapper">
+
+    <button class="nav-button left" (click)="prev()">&#8249;</button>
+
+    <div *ngFor="let car of cars; let i = index" class="gallery-item" [ngClass]="getBoxClass(i)">
+      <img class="car-image" [src]="car.img" [alt]="car.name">
+      <div class="car-details">
+        <h3 class="car-name">{{ car.name }}</h3>
+        <p class="car-info"><strong>Velocidad Máxima:</strong> {{ car.maxSpeed }}</p>
+        <p class="car-info"><strong>Combustible:</strong> {{ car.fuel }}</p>
+        <p class="car-info"><strong>Año:</strong> {{ car.year }}</p>
+        <p class="car-info"><strong>Precio:</strong> {{ car.price | currency:'USD' }}</p>
+        <button class="view-more-button" (click)="openPopup(car)">Ver más</button>
+      </div>
+    </div>
+
+    <button class="nav-button right" (click)="next()">&#8250;</button>
+  </div>
+
+  <div class="dots">
+    <span *ngFor="let car of cars; let i = index" 
+          [class.active]="i === currentIndex"
+          (click)="currentIndex = i"></span>
+  </div>
+</div>
+
+<!-- Popup -->
+<div class="popup" *ngIf="showPopup">
+  <div class="popup-content">
+    <h2>{{ selectedCar?.name }}</h2>
+    <img [src]="selectedCar?.img" [alt]="selectedCar?.name" class="popup-image">
+    <p><strong>Velocidad Máxima:</strong> {{ selectedCar?.maxSpeed }}</p>
+    <p><strong>Combustible:</strong> {{ selectedCar?.fuel }}</p>
+    <p><strong>Año:</strong> {{ selectedCar?.year }}</p>
+    <p><strong>Precio:</strong> {{ selectedCar?.price | currency:'USD' }}</p>
+    <button class="close-button" (click)="closePopup()">Cerrar</button>
+  </div>
+</div>

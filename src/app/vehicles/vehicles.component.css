@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #000000, #222222);
+    color: #ffcc00;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid #ffcc00;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin: 2rem 0;
+    color: #ffcc00;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #ffcc00;
+    margin: 0.5rem auto;
+    border-radius: 2px;
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.car-card {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border: 1px solid #333;
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 204, 0, 0.2);
+    border-color: #ffcc00;
+}
+
+.car-image {
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+.car-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.car-card:hover .car-overlay {
+    opacity: 1;
+}
+
+.car-action {
+    background-color: #ffcc00;
+    color: #000000;
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.car-action:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+}
+
+.car-details {
+    padding: 1.5rem;
+}
+
+.car-name {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #ffcc00;
+}
+
+.car-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.car-description {
+    color: #aaaaaa;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.car-features {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+    color: #888888;
+    font-size: 0.9rem;
+}
+
+.car-features span {
+    display: flex;
+    align-items: center;
+}
+
+.car-features span::before {
+    content: '•';
+    color: #ffcc00;
+    margin-right: 5px;
+    font-size: 1.2rem;
+}
+
+footer {
+    background-color: #000000;
+    color: #888888;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    border-top: 2px solid #ffcc00;
+}
+
+.footer-logo {
+    color: #ffcc00;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .car-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .car-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .car-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .car-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}

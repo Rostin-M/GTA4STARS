@@ -1,0 +1,137 @@
+
+
+  <script>
+    // Variables para el carrusel
+    const reviews = [
+      {
+        img: 'https://i.ibb.co/Jt5Z6PB/gta-bg.jpg',
+        alt: 'Cliente 1',
+        message: '¡Compré el Zentorno y ahora soy el rey de las calles de Los Santos! Excelente servicio.',
+        name: 'Michael De Santa',
+        stars: 5,
+        car: 'Pegassi Zentorno'
+      },
+      {
+        img: 'https://i.ibb.co/Jt5Z6PB/gta-bg.jpg',
+        alt: 'Cliente 2',
+        message: 'El Adder es una bestia. ¡Perfecto para escapar de la policía en mis misiones!',
+        name: 'Franklin Clinton',
+        stars: 4.5,
+        car: 'Truffade Adder'
+      },
+      {
+        img: 'https://i.ibb.co/Jt5Z6PB/gta-bg.jpg',
+        alt: 'Cliente 3',
+        message: 'El Osiris no solo es rápido, también es elegante. ¡Ideal para mis negocios en Vinewood!',
+        name: 'Trevor Philips',
+        stars: 5,
+        car: 'Pegassi Osiris'
+      },
+      {
+        img: 'https://i.ibb.co/Jt5Z6PB/gta-bg.jpg',
+        alt: 'Cliente 4',
+        message: 'El T20 es perfecto para las carreras clandestinas. ¡Gracias por el excelente servicio!',
+        name: 'Lamar Davis',
+        stars: 4.5,
+        car: 'Progen T20'
+      },
+      {
+        img: 'https://i.ibb.co/Jt5Z6PB/gta-bg.jpg',
+        alt: 'Cliente 5',
+        message: 'El Itali GTO es mi favorito. ¡No hay mejor lugar para comprar autos en Los Santos!',
+        name: 'Ron Jakowski',
+        stars: 5,
+        car: 'Grotti Itali GTO'
+      },
+      {
+        img: 'https://i.ibb.co/Jt5Z6PB/gta-bg.jpg',
+        alt: 'Cliente 6',
+        message: 'El Cheetah es increíblemente rápido. ¡Perfecto para mis escapadas en Blaine County!',
+        name: 'Wade Hebert',
+        stars: 4.5,
+        car: 'Grotti Cheetah'
+      }
+    ];
+
+    let currentIndex = 1;
+    const totalReviews = reviews.length;
+
+    // Función para actualizar el carrusel
+    function updateCarousel() {
+      const prevIndex = (currentIndex - 1 + totalReviews) % totalReviews;
+      const nextIndex = (currentIndex + 1) % totalReviews;
+      
+      // Eliminar todas las clases
+      document.querySelectorAll('.review-card').forEach(card => {
+        card.classList.remove('active', 'prev', 'next');
+      });
+      
+      // Asignar nuevas clases
+      document.getElementById(`review-${prevIndex}`).classList.add('prev');
+      document.getElementById(`review-${currentIndex}`).classList.add('active');
+      document.getElementById(`review-${nextIndex}`).classList.add('next');
+    }
+
+    // Botones de navegación
+    document.querySelector('.prev-btn').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalReviews) % totalReviews;
+      updateCarousel();
+    });
+
+    document.querySelector('.next-btn').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalReviews;
+      updateCarousel();
+    });
+
+    // Sistema de calificación por estrellas
+    const starButtons = document.querySelectorAll('.star-btn');
+    let currentRating = 0;
+
+    starButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const rating = parseInt(button.getAttribute('data-rating'));
+        currentRating = rating;
+        
+        // Actualizar estrellas
+        starButtons.forEach((btn, index) => {
+          const star = btn.querySelector('i');
+          if (index < rating) {
+            star.className = 'fas fa-star';
+            btn.classList.add('active');
+          } else {
+            star.className = 'far fa-star';
+            btn.classList.remove('active');
+          }
+        });
+      });
+    });
+
+    // Manejar envío del formulario
+    document.querySelector('.comment-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const car = document.getElementById('car').value;
+      const comment = document.getElementById('comment').value;
+      
+      if (name && car && comment && currentRating > 0) {
+        alert(`¡Gracias por tu comentario, ${name}! Tu opinión sobre el ${car} ha sido registrada.`);
+        this.reset();
+        
+        // Resetear estrellas
+        starButtons.forEach(btn => {
+          const star = btn.querySelector('i');
+          star.className = 'far fa-star';
+          btn.classList.remove('active');
+        });
+        currentRating = 0;
+      } else {
+        alert('Por favor completa todos los campos y selecciona una calificación.');
+      }
+    });
+
+    // Inicializar carrusel
+    updateCarousel();
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93b2191c819b370f',t:'MTc0NjQ2NzYxNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,196 @@
+/* Estilos principales */
+.login-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 350px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  color: white;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.login-title {
+  text-align: center;
+  color: #fdfdfd;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.login-form .input-group {
+  margin-bottom: 1rem;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.input-icon i {
+  margin-right: 0.5rem;
+  color: #f1df41;
+}
+
+.input-field {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+  color: #000;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.forgot-link {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.remember-me {
+  color: #ccc;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #f9d806;
+  color: #030100;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #ffee80;
+}
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+  margin: 1rem auto;
+}
+
+.google-btn:hover {
+  background-color: #f5f5f5;
+}
+
+.google-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.register-link a {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+.close-btn {
+  position: absolute;
+  background: transparent;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 2rem;
+  color: #ff0000;
+  cursor: pointer;
+}
+
+/* ------------- RESPONSIVE DESIGN ------------- */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 768px) {
+  .login-container {
+    width: 90%; /* Ocupa el 90% del ancho de la pantalla */
+    padding: 1.5rem; /* Reduce el padding */
+  }
+
+  .login-title {
+    font-size: 1.5rem; /* Reduce el tamaño del título */
+  }
+
+  .google-btn {
+    max-width: 100%; /* El botón ocupa todo el ancho disponible */
+  }
+}
+
+/* Móviles y pantallas pequeñas */
+@media (max-width: 480px) {
+  .login-container {
+    width: 95%; /* Ocupa casi todo el ancho */
+    padding: 1rem; /* Reduce aún más el padding */
+  }
+
+  .login-title {
+    font-size: 1.2rem; /* Reduce el tamaño del título */
+  }
+
+  .login-btn,
+  .google-btn {
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
+    padding: 0.6rem; /* Reduce el padding */
+  }
+
+  .input-icon {
+    padding: 0.4rem; /* Reduce el padding del input */
+  }
+
+  .input-field {
+    font-size: 0.9rem; /* Reduce el tamaño del texto en el input */
+  }
+
+  .close-btn {
+    font-size: 1.5rem; /* Reduce el tamaño del botón de cerrar */
+  }
+}
+
