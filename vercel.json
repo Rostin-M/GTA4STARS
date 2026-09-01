@@ -1,0 +1,7 @@
+{
+  "buildCommand": "ng build --configuration production",
+  "outputDirectory": "dist/gta4-stars/browser",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
